@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#202124</color>
+    <color name="navy_deep">#111214</color>
+    <color name="green">#35D873</color>
+    <color name="green_dark">#157A45</color>
+    <color name="green_soft">#E9F8EF</color>
+    <color name="blue">#2789D8</color>
+    <color name="blue_soft">#EAF4FC</color>
+    <color name="coral">#D85C4A</color>
+    <color name="coral_soft">#FAECE9</color>
+    <color name="amber">#9B6718</color>
+    <color name="amber_soft">#FBF1DE</color>
+    <color name="ink">#202124</color>
+    <color name="muted">#70746F</color>
+    <color name="line">#E3E4E1</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_soft">#F3F4F2</color>
+    <color name="app_background">#F7F7F5</color>
+</resources>

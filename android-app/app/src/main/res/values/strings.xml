@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ADLER Strip Reader</string>
+    <string name="brand_logo">ADLER brand</string>
+    <string name="brand_subtitle">CRISPR STRIP READER</string>
+    <string name="select_mode">SELECT DETECTION MODE</string>
+    <string name="camera_title">Camera detection</string>
+    <string name="camera_subtitle">Capture a test strip and analyze it</string>
+    <string name="single_title">Single-target image</string>
+    <string name="single_subtitle">Upload and read T / C lines</string>
+    <string name="dual_title">Dual-target image</string>
+    <string name="dual_subtitle">Upload and read T1 / T2 / C lines</string>
+    <string name="offline_label">OFFLINE ANALYSIS</string>
+    <string name="privacy_note">Processed locally on this device. Images are never uploaded.</string>
+    <string name="back">Back</string>
+    <string name="retry">Retry analysis</string>
+    <string name="analyzing">ANALYZING IMAGE</string>
+    <string name="analyzing_detail">Processing locally on this device</string>
+    <string name="result_label">DETECTION RESULT</string>
+    <string name="detection_values">DETECTION VALUES</string>
+    <string name="source_photo">SOURCE PHOTO</string>
+    <string name="interpreted_strip">INTERPRETED STRIP</string>
+    <string name="choose_another">Choose another image</string>
+    <string name="capture_again">Capture again</string>
+    <string name="mode_dialog_title">Select strip type</string>
+    <string name="single_target">Single target</string>
+    <string name="dual_target">Dual target</string>
+    <string name="single_mode_title">SINGLE-TARGET</string>
+    <string name="dual_mode_title">DUAL-TARGET</string>
+    <string name="offline_engine_unavailable">The offline analysis engine could not be loaded.</string>
+    <string name="image_picker_unavailable">No image picker is available on this device.</string>
+    <string name="camera_output_unavailable">The camera output could not be created.</string>
+    <string name="camera_app_unavailable">No camera app is available on this device.</string>
+    <string name="image_processing_failed">The selected image could not be processed.</string>
+    <string name="result_meta_format">"%1$s confidence  |  %2$d %3$s  |  %4$s  |  Offline"</string>
+    <string name="unreadable_result_meta">"No readable strip detected  |  Processed offline"</string>
+    <string name="strip_photo_hint">Try a brighter, closer photo with the full strip visible.</string>
+    <string name="strip_header_format">"STRIP %1$d  |  %2$s CONFIDENCE"</string>
+    <string name="threshold_format">"Threshold  %1$.3f"</string>
+    <string name="line_visible">VISIBLE</string>
+    <string name="line_not_visible">NOT VISIBLE</string>
+    <string name="control_line_label">"CONTROL LINE  &#183;  C"</string>
+    <string name="test_line_format">"TEST LINE  &#183;  %1$s"</string>
+    <plurals name="strip_count_label">
+        <item quantity="one">strip</item>
+        <item quantity="other">strips</item>
+    </plurals>
+</resources>

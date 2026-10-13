@@ -1,0 +1,14 @@
+path,expected_single_result,expected_t1,expected_t2,include,notes
+dual-target/t2-positive/18-2.jpg,,positive,positive,yes,manual_review_accept_double_positive
+single-target/batch-4/1.jpg,positive,,,yes,manual_review_visible_far_from_arrow_T_line
+single-target/batch-4/12.jpg,positive,,,yes,manual_review_visible_far_from_arrow_T_line
+single-target/batch-4/1-prime.jpg,positive,,,yes,manual_review_visible_far_from_arrow_T_line
+single-target/batch-4/2.jpg,positive,,,yes,manual_review_visible_far_from_arrow_T_line
+single-target/batch-4/27.jpg,positive,,,yes,manual_review_visible_far_from_arrow_T_line
+single-target/batch-4/28.jpg,positive,,,yes,manual_review_visible_far_from_arrow_T_line
+single-target/batch-4/2-left-prime.jpg,positive,,,yes,manual_review_visible_far_from_arrow_T_line
+single-target/batch-4/3-left-prime.jpg,positive,,,yes,manual_review_visible_far_from_arrow_T_line
+single-target/batch-1/16-9.jpg,negative,,,yes,manual_review_single_target_negative
+single-target/batch-1/18-9.jpg,negative,,,yes,manual_review_single_target_negative
+single-target/batch-2/16-4.jpg,negative,,,yes,manual_review_single_target_negative
+single-target/batch-2/18-4.jpg,negative,,,yes,manual_review_single_target_negative

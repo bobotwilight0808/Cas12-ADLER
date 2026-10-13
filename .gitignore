@@ -1,0 +1,62 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+
+# Generated files and local datasets
+outputs/
+datasets/
+
+# Android build tools, emulator state, and machine-specific settings
+.gradle/
+.android/
+*.avd/
+android-sdk/
+android-avd/
+sdk/
+emulator/
+.cache/
+android-app/local.properties
+android-app/app/build/
+android-app/build/
+*.apk
+*.aab
+*.apks
+*.jks
+*.keystore
+*.hprof
+
+# Editor, OS, and local credentials
+.idea/
+.vscode/
+*.iml
+.DS_Store
+~$*
+.env
+.env.*
+*.log
+
+# Raw data and reference artifacts live in the working directory but are not
+# part of the source repository.
+single-target/
+dual-target/
+deep-learning-enhanced-hand-driven-spatial-encoding-microfluidics-for-multiplexed-molecular-testing-at-home/
+*.jpg
+*.jpeg
+*.png
+*.pdf
+*.pptx
+*.mp4
+*.mov
+*.webp
+*.heic
+*.zip
+*.tar.gz
+
+# These two supplied brand images are application source assets.
+!android-app/app/src/main/res/drawable-nodpi/adler_wordmark.png
+!android-app/app/src/main/res/drawable-nodpi/app_icon.png
+!static/adler_wordmark.png

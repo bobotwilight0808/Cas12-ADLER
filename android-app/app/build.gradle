@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.adler.stripreader'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.adler.stripreader'
+        minSdk 29
+        targetSdk 36
+        versionCode 1
+        versionName '0.1.0'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    implementation 'org.opencv:opencv:4.13.0'
+    implementation 'androidx.activity:activity:1.13.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+}
+
+def calibrationRoot = rootProject.projectDir.parentFile
+def generatedCalibrationAssets = file("${buildDir}/generated/androidTestAssets")
+def includeCalibrationDataset = providers.gradleProperty('includeCalibrationDataset')
+        .map { it.toBoolean() }.getOrElse(false)
+
+android.sourceSets.androidTest.assets.srcDir(generatedCalibrationAssets)
+
+tasks.register('prepareCalibrationAssets') {
+    inputs.property('includeCalibrationDataset', includeCalibrationDataset)
+    inputs.file(new File(calibrationRoot, 'labels.csv'))
+    inputs.file(new File(calibrationRoot, 'label_overrides.csv'))
+    outputs.dir(generatedCalibrationAssets)
+    doLast {
+        File outputRoot = generatedCalibrationAssets
+        delete(outputRoot)
+        outputRoot.mkdirs()
+        if (!includeCalibrationDataset) return
+        File labelsFile = new File(calibrationRoot, 'labels.csv')
+        copy {
+            from(labelsFile, new File(calibrationRoot, 'label_overrides.csv'))
+            into(outputRoot)
+        }
+        labelsFile.readLines('UTF-8').drop(1).each { line ->
+            String[] columns = line.split(',', -1)
+            if (columns.length < 9 || columns[8] != 'yes') return
+            File sourceImage = new File(calibrationRoot, columns[0].replace('\uFEFF', ''))
+            if (!sourceImage.isFile()) {
+                throw new GradleException("Missing calibration image: ${sourceImage}. "
+                        + "Restore the local dataset or omit -PincludeCalibrationDataset=true.")
+            }
+            File destination = new File(outputRoot, "dataset/${columns[0].replace('\uFEFF', '')}")
+            destination.parentFile.mkdirs()
+            copy {
+                from(sourceImage)
+                into(destination.parentFile)
+            }
+        }
+    }
+}
+
+tasks.configureEach { task ->
+    if (task.name.contains('AndroidTest')) {
+        task.dependsOn(tasks.named('prepareCalibrationAssets'))
+    }
+}
