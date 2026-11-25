@@ -530,6 +530,19 @@
                         android:textColor="@color/muted"
                         android:textSize="10sp" />
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/cloud_upload_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_icon_button"
+                    android:fontFamily="sans-serif-medium"
+                    android:minHeight="48dp"
+                    android:text="@string/cloud_upload"
+                    android:textAllCaps="false"
+                    android:textColor="@color/ink"
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <Button

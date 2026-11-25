@@ -133,6 +133,12 @@ public final class MainActivity extends ComponentActivity {
         retryButton.setOnClickListener(view -> {
             if (selectedImageUri != null) beginAnalysis();
         });
+        findViewById(R.id.cloud_upload_button).setOnClickListener(view ->
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.cloud_upload_title)
+                        .setMessage(R.string.cloud_upload_detail)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .show());
         primaryActionButton.setOnClickListener(view -> {
             if (currentSourceIsCamera) launchCamera();
             else launchGallery(currentStripType);

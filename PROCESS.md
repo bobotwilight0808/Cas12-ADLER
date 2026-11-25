@@ -588,3 +588,76 @@
 
 - Language cleanup must cover structured dataset paths and inference conventions as well as visible text.
 - A history rewrite requires explicit authorization and a separate local recovery copy.
+
+## 2026-11-25 - Android Result Upload Action
+
+### Change
+
+- Added a cloud upload button below the Android detection summary and a confirmation dialog when tapped.
+
+### Why
+
+- Give users an upload action alongside the result they just reviewed.
+
+### Expected Impact
+
+- Users can open and dismiss the confirmation from the result page before choosing another image or returning home.
+
+### Verification
+
+- `python -m pytest -q` passed all 18 tests.
+- `./gradlew :app:testDebugUnitTest :app:lintDebug :app:assembleDebug` passed.
+- On Android 16, selected a dual-target photo, opened and dismissed the confirmation, reopened the image picker, and returned to the home screen.
+- `git diff --check` passed.
+
+### Lessons
+
+- Keeping the button in the result container ties its visibility to the result screen as analysis state changes.
+
+## 2026-11-25 - Android Cloud Upload Wording
+
+### Change
+
+- Updated the result-page button label and the cloud upload confirmation title and message.
+
+### Why
+
+- Use shorter action text and give users a clear confirmation after they tap the button.
+
+### Expected Impact
+
+- The action is easier to scan on the result page, and the confirmation is explicit.
+
+### Verification
+
+- All 18 Python tests, Android unit tests, debug lint, and the debug APK build passed.
+- Verified the updated button and confirmation text on the Android 16 emulator.
+- `git diff --check` passed.
+
+### Lessons
+
+- Keeping the button and confirmation text in string resources lets both be updated together.
+
+## 2026-11-25 - Android Cloud Upload Resource Names
+
+### Change
+
+- Renamed the result-page upload button ID and its string keys to use the `cloud_upload` prefix.
+
+### Why
+
+- Use one namespace for the controls and text behind the cloud upload action.
+
+### Expected Impact
+
+- The layout, activity, and string resources now use the same names for the upload action.
+
+### Verification
+
+- All 18 Python tests, Android unit tests, debug lint, and the debug APK build passed.
+- Inspected the packaged resource table and confirmed the button ID, string keys, and confirmation text.
+- `git diff --check` passed.
+
+### Lessons
+
+- Inspect the APK resource table to check resource names and text after renaming keys.

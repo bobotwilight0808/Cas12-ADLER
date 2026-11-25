@@ -17,6 +17,9 @@
     <string name="analyzing">ANALYZING IMAGE</string>
     <string name="analyzing_detail">Processing locally on this device</string>
     <string name="result_label">DETECTION RESULT</string>
+    <string name="cloud_upload">Upload to cloud</string>
+    <string name="cloud_upload_title">Cloud upload</string>
+    <string name="cloud_upload_detail">The result was successfully uploaded to the cloud.</string>
     <string name="detection_values">DETECTION VALUES</string>
     <string name="source_photo">SOURCE PHOTO</string>
     <string name="interpreted_strip">INTERPRETED STRIP</string>
